@@ -29,7 +29,7 @@ public class Thingy
 	{
 		this.number = number;
 	}
-	public void setValue(double vaule)
+	public void setValue(double value)
 	{
 		this.value = value;
 	}	
