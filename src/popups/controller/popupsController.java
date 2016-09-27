@@ -13,6 +13,14 @@ public class PopupsController
 	
 	public void start()
 	{
+		int count = 0;
+		while(count < 10)		
+		{
 		display.displayMessage("Look words on the monitor!!!");
+		
+		String answer = display.collectResponse("What is your name?");
+		
+		count++;
+		}
 	}
 }
