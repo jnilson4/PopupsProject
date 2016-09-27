@@ -35,7 +35,7 @@ public class PopupViewer
 	 * @param question The question being asked.
 	 * @return The JOptionPane constant value for yes/no/cancel.
 	 */
-	public int collectOption(String question);
+	public int collectOption(String question)
 	{
 		int optionNumber = 0;
 		optionNumber = JOptionPane.showConfirmDialog(null, question);
