@@ -15,7 +15,7 @@ public class PopupsController
 	{
 		int count = 0;
 		String answer = "sample";
-		while(!answer.equals(""))		
+		while(answer != null && !answer.equals(""))		
 		{
 		display.displayMessage("Look words on the monitor!!!");
 		
