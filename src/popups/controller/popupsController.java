@@ -1,28 +1,35 @@
 package popups.controller;
 
 import popups.view.PopupViewer;
+import popups.model.Thingy;
+import java.util.List;
+import java.util.ArrayList;
 
 public class PopupsController
 {
 	private PopupViewer display;
+	private List<Thingy> thingyList;
 	
 	public PopupsController()
 	{
 		display = new PopupViewer();
+		thingyList = new ArrayList<Thingy>();
+		//ArrayList is a type of List.
 	}
 	
 	public void start()
 	{
-		int count = 0;
+		learnLists();
+	}
+	
+	private void askQuestionLoop()
+	{
 		String answer = "sample";
-		while(answer != null && !answer.equals(""))		
+		
+		while(answer != null && !isDouble(answer))		
 		{
-		display.displayMessage("Look words on the monitor!!!");
-		
-		answer = display.collectResponse("What is your name?");
-		
-		count++;
-		}
+			answer = display.collectResponse("You need to type in a double!");
+		}	
 	}
 	
 	/**
@@ -41,7 +48,7 @@ public class PopupsController
 		}
 		catch(NumberFormatException notDoubleError)
 		{
-			display.displayMessage("That was not a double =:<");
+			display.displayMessage("That was not a double! =:<");
 		}
 		
 		return validDouble;
@@ -64,9 +71,23 @@ public class PopupsController
 		catch(NumberFormatException notIntegerError)
 		{
 			display.displayMessage(notIntegerError.getMessage());
-			display.displayMessage("YOu need to type in an int!");
+			display.displayMessage("You need to type in an int!");
 		}
 		
 		return validInteger;
+	}
+	
+	private void learnLists()
+	{
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy firstThingy = new Thingy();
+		thingyList.add(firstThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy secondThingy = new Thingy();
+		thingyList.add(secondThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy thirdThingy = new Thingy();
+		thingyList.add(thirdThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
 	}
 }
