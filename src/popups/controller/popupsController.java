@@ -46,4 +46,27 @@ public class PopupsController
 		
 		return validDouble;
 	}
+	
+	/**
+	 * Checks a supplied String value if it can be converted to an Integer. If it cannot a popup message is displayed.
+	 * @param potentialValueThe supplied String.
+	 * @return Whether the conversion to an integer is possible.
+	 */
+	private boolean isInteger(String potentialValue)
+	{
+		boolean validInteger = false;
+		
+		try
+		{
+			int testValue = Integer.parseInt(potentialValue);
+			validInteger = true;
+		}
+		catch(NumberFormatException notIntegerError)
+		{
+			display.displayMessage(notIntegerError.getMessage());
+			display.displayMessage("YOu need to type in an int!");
+		}
+		
+		return validInteger;
+	}
 }
