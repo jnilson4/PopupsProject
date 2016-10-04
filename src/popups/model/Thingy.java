@@ -7,6 +7,7 @@ public class Thingy
 	private String words;
 	private boolean isValid;
 	
+	
 	public int getNumber()
 	{
 		return number;
@@ -33,7 +34,7 @@ public class Thingy
 	{
 		this.value = value;
 	}	
-	public void setWord(String words)
+	public void setWords(String words)
 	{
 		this.words = words;
 	}
