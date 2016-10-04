@@ -111,5 +111,33 @@ public class PopupsController
 			display.displayMessage("The message at " + index + " is " + thingyList.get(index).getWords());
 		}
 		
+		thingyList.get(3).setWords("I just changed what is inside");
+		Thingy tempThingy = thingyList.get(4);
+		tempThingy.setWords("also changed");
+		
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage(thingyList.get(index).getWords());
+		}
+		
+		Thingy replacement = new Thingy();
+		replacement.setWords("I am a replicant");
+		
+		Thingy old = thingyList.set(0, replacement);
+		
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage(thingyList.get(index).getWords());
+		}
+		old.setWords("I was replaced:(");
+		display.displayMessage(old.getWords());
+		
+		thingyList.remove(4);
+		display.displayMessage("The size is now " + thingyList.size());
+		old = thingyList.remove(4);
+		display.displayMessage("The size is now " + thingyList.size());
+		display.displayMessage("This is what I removed: " + old. getWords());
+		thingyList.add(0, old);
+		
 	}
 }
