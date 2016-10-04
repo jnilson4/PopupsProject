@@ -4,11 +4,13 @@ import popups.view.PopupViewer;
 import popups.model.Thingy;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PopupsController
 {
 	private PopupViewer display;
 	private List<Thingy> thingyList;
+	private Scanner readKeyboardInput;
 	
 	public PopupsController()
 	{
@@ -138,6 +140,10 @@ public class PopupsController
 		display.displayMessage("The size is now " + thingyList.size());
 		display.displayMessage("This is what I removed: " + old. getWords());
 		thingyList.add(0, old);
+		
+		String answer = "none";
+		answer = display.collectResponse("Type in what you want to change the spot '4' in the list:");
+		//thingyList.set(4, answer);
 		
 	}
 }
