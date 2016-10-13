@@ -145,6 +145,7 @@ public class PopupsController
 		answer = display.collectResponse("Type in what you want to change the spot '4' in the list:");
 		//thingyList.set(4, answer);
 		
+		//for-each loops
 		for (Thingy currentThingy : thingyList)
 		{
 			display.displayMessage("The current value is " + currentThingy.getWords());
